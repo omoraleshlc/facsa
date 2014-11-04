@@ -3,35 +3,43 @@
 /* @var $data UmControlAlumnos */
 ?>
 
+
+
 <div class="view">
+    
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('keyAlumnos')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->keyAlumnos), array('view', 'id'=>$data->keyAlumnos)); ?>
-	<br />
+ 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Gen')); ?>:</b>
-	<?php echo CHtml::encode($data->Gen); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('vive')); ?>:</b>
-	<?php echo CHtml::encode($data->vive); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('matricula')); ?>:</b>
-	<?php echo CHtml::encode($data->matricula); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('apellidos1')); ?>:</b>
-	<?php echo CHtml::encode($data->apellidos1); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('apellidos2')); ?>:</b>
-	<?php echo CHtml::encode($data->apellidos2); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre1')); ?>:</b>
+        <?php echo CHtml::image('images/i_imagen.jpeg', 'Nombre',array('width'=>50,'height'=>50)); ?>
+        
+    <b >
+        <?php echo CHtml::encode($data->matricula); ?>
+        
+        </b>
+    <a href="view&id=<?php echo $data->keyAlumnos;?>"></a>
+	
+    
+    	
 	<?php echo CHtml::encode($data->nombre1); ?>
-	<br />
+	<?php echo CHtml::encode($data->apellidos1); ?>	
+	<?php echo CHtml::encode($data->apellidos2); ?>
+	
+        
+        
+	<?php echo CHtml::link(CHtml::encode("Ver"), array('view', 'id'=>$data->keyAlumnos)); ?>
+        
+        
+	<?php //echo CHtml::link(CHtml::encode($data->keyAlumnos), array('view', 'id'=>$data->keyAlumnos)); ?>
+	
+
+
+
+
+
+
+
+
+
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre2')); ?>:</b>

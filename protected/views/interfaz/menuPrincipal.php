@@ -200,7 +200,7 @@ $watermark_options  = array(
               <li class="span2">
                   
                 <div id="1" class="thumbnail" onmouseover="javascript:cambiarBorde('1');" onmouseout="normal('1');">
-                  <img height="40" src="./images/ifacsa.jpeg" width="40" data-src="holder.js/64x64" alt="">
+                  <img height="50" src="./images/i_alumnos.jpeg" width="75" data-src="holder.js/64x64" alt="">
                   <div class="caption" align="center">
                     <small>Alumnos</small>                
                     
@@ -211,13 +211,13 @@ $watermark_options  = array(
                 </a>
                 
                 
-                
+                <li></li>
                 
                 <a href="index.php?r=reports">  
               <li class="span2">
                   
-                <div id="1" class="thumbnail" onmouseover="javascript:cambiarBorde('1');" onmouseout="normal('1');">
-                  <img height="38" src="./images/health.jpeg" width="50" data-src="holder.js/64x64" alt="">
+                <div id="2" class="thumbnail" onmouseover="javascript:cambiarBorde('2');" onmouseout="normal('2');">
+                  <img height="50" src="./images/i_bars.jpeg" width="68" data-src="holder.js/64x64" alt="">
                   <div class="caption" align="center">
                     <small>Reportes</small>                
                     

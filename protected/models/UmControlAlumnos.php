@@ -165,7 +165,7 @@ class UmControlAlumnos extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		//$criteria->compare('keyA',$this->keyA,true);
-                $criteria->compare('matricula',$this->matricula);
+                $criteria->compare('matricula',$this->matricula,true);
 		//$criteria->compare('Gen',$this->Gen);
 		//$criteria->compare('vive',$this->vive,true);
 		
