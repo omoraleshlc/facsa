@@ -2,19 +2,15 @@
 
  <h1>FACULTAD DE CIENCIAS DE LA SALUD</h1>
          <div align="center" class="nav-header">
-        <img height="200" src="./images/i_um.jpeg" width="200"></img>
+         <?php echo CHtml::image('images/logo_um.png', 'Universidad de Montemorelos',array('width'=>250,'height'=>250)); ?>
         </div>
+ <br>
 <p>
-    
-Haced todas las cosas sin murmuraciones ni discusiones, para que seáis irreprensibles y sencillos,
-hijos de Dios sin tacha en medio de una generación torcida y perversa, en medio de la cual resplandecéis como luminares en el mundo,
-sosteniendo firmemente la palabra de vida,
-a fin de que yo tenga motivo para gloriarme en el día de Cristo, ya que no habré corrido en vano ni habré trabajado en vano.      
-Filipenses 2:14-16.
+Sistema de investigación de ex-alumnos
 <br>
 
 
-    <a href="index.php?r=site/login" class="btn btn-primary btn-primary">
+    <a href="index.php?r=site/login" class="btn btn-primary btn-success">
       Accesar al sistema
     </a>
 <!-- Button to trigger modal 

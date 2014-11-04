@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
 
 
     <div align="center" class="nav-header">
-        <img height="200" src="./images/i_um.jpeg" width="200"></img>
+ <?php echo CHtml::image('images/logo_um.png', 'Universidad de Montemorelos',array('width'=>250,'height'=>250)); ?>
         </div>
 
 
@@ -65,12 +65,12 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'password'); ?>
     </div>
 
-<div class="buttons">
+<div class="warning">
     
-    <?php echo CHtml::submitButton('LOGIN'); ?>
+    <?php echo CHtml::submitButton('LOGIN',array('class'=>'form-control')); ?>
     </div>
 
-    
+
 
 
 
