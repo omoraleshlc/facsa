@@ -15,74 +15,83 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
+	
+   
+    
 
 	<?php echo $form->errorSummary($model); ?>
+    <br>
+    <h2>Datos Personales</h2>
+    
+    <table class="table table-striped">
+    <tr>
         
-        <table class="table table-condensed">
-            <tr>
+        <td>
+    <?php //echo $form->labelEx($model,'nombre1'); ?>
+		<?php echo $form->textField($model,'nombre1',array('size'=>13,'maxlength'=>13,'placeholder'=>'Nombre1')); ?>
+		<?php echo $form->error($model,'nombre1'); ?>    
+        </td>
+        
+        <td>
+       		<?php //echo $form->labelEx($model,'nombre2'); ?>
+		<?php echo $form->textField($model,'nombre2',array('size'=>19,'maxlength'=>19,'placeholder'=>'Nombre2')); ?>
+		<?php echo $form->error($model,'nombre2'); ?>     
+        </td>
+        
+        <td></td>
+    </tr>
+    
+    
+    <tr>
                 <td>
-                 <?php echo $form->labelEx($model,'Generacion Ej: 1970'); ?>
-		<?php echo $form->textField($model,'Gen'); ?>
-		<?php echo $form->error($model,'Gen'); ?>   
-                </td>
-                
-                <td>
-                   <?php echo $form->labelEx($model,'Vive?'); ?>
-		<?php echo $form->textField($model,'vive',array('size'=>2,'maxlength'=>2)); ?>
-		<?php echo $form->error($model,'vive'); ?> 
-                </td>
-                
-                
-                <td>
-		<?php echo $form->labelEx($model,'matricula'); ?>
-		<?php echo $form->textField($model,'matricula'); ?>
-		<?php echo $form->error($model,'matricula'); ?>                    
-                </td>
-            </tr>  
-            
-            <tr>
-                <td>
-		<?php echo $form->labelEx($model,'nombre1'); ?>
-		<?php echo $form->textField($model,'nombre1',array('size'=>13,'maxlength'=>13)); ?>
-		<?php echo $form->error($model,'nombre1'); ?>                    
-
-		<?php echo $form->labelEx($model,'nombre2'); ?>
-		<?php echo $form->textField($model,'nombre2',array('size'=>19,'maxlength'=>19)); ?>
-		<?php echo $form->error($model,'nombre2'); ?>                    
-                </td>   
-                
-                <td>
-                <?php echo $form->labelEx($model,'apellidos1'); ?>
-		<?php echo $form->textField($model,'apellidos1',array('size'=>24,'maxlength'=>24)); ?>
+                <?php //echo $form->labelEx($model,'apellidos1'); ?>
+		<?php echo $form->textField($model,'apellidos1',array('size'=>24,'maxlength'=>24,'placeholder'=>'Apellidos1')); ?>
 		<?php echo $form->error($model,'apellidos1'); ?>   
                 </td>
                 
-                <td>
-		<?php echo $form->labelEx($model,'apellidos2'); ?>
-		<?php echo $form->textField($model,'apellidos2',array('size'=>12,'maxlength'=>12)); ?>
+                        <td>
+		<?php //echo $form->labelEx($model,'apellidos2'); ?>
+		<?php echo $form->textField($model,'apellidos2',array('size'=>12,'maxlength'=>12,'placeholder'=>'Apellidos2')); ?>
 		<?php echo $form->error($model,'apellidos2'); ?>                    
                 </td>
-            </tr>
-            
-            
-            
-            <tr>
+                <td></td>
+    </tr>
+    
+    
+    
+     <tr>
                 <td>
-		<?php echo $form->labelEx($model,'Hermanos'); ?>
-		<?php echo $form->textField($model,'Hermanos',array('size'=>1,'maxlength'=>1)); ?>
+		<?php //echo $form->labelEx($model,'Hermanos'); ?>
+		<?php echo $form->textField($model,'Hermanos',array('size'=>1,'maxlength'=>1,'placeholder'=>'Hermanos')); ?>
 		<?php echo $form->error($model,'Hermanos'); ?>                    
                 </td>   
                 
                 <td>
-		<?php echo $form->labelEx($model,'fechaNacimiento'); ?>
-		<?php echo $form->textField($model,'fechaNacimiento',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'fechaNacimiento'); ?>                    
+
+
+	       
+		<?php echo $form->labelEx($model,'fechaNacimiento'); ?>                    
+<?php
+$this->widget('zii.widgets.jui.CJuiDatePicker',array(
+    'name'=>'fechaNacimiento',    
+    'value'=>date('Y-m-d'),
+    'options'=>array(        
+        'showButtonPanel'=>true,
+        'dateFormat'=>'yy-mm-dd',//Date format 'mm/dd/yy','yy-mm-dd','d M, y','d MM, y','DD, d MM, yy'
+    ),
+    'htmlOptions'=>array(
+        'style'=>''
+    ),
+));
+?>
+	<?php echo $form->error($model,'fechaNacimiento'); ?>  
+
+              
                 </td>
                 
                 <td>
-		<?php echo $form->labelEx($model,'lugarNacimiento'); ?>
-		<?php echo $form->textField($model,'lugarNacimiento',array('size'=>26,'maxlength'=>26)); ?>
+		<?php //echo $form->labelEx($model,'lugarNacimiento'); ?>
+		<?php echo $form->textField($model,'lugarNacimiento',array('size'=>26,'maxlength'=>26,'placeholder'=>'Lugar de Nacimiento')); ?>
 		<?php echo $form->error($model,'lugarNacimiento'); ?>                    
                 </td>
             </tr>
@@ -91,7 +100,7 @@
             
             <tr>
                 <td>
-       <?php echo $form->labelEx($model,'País de Nacimiento'); ?>
+       <?php //echo $form->labelEx($model,'País de Nacimiento'); ?>
        <?php
              $departamento = new CDbCriteria;
              $departamento->order = 'name ASC';
@@ -103,7 +112,7 @@
                            'type' => 'POST',
                            'url' => CController::createUrl('CombosDependientes/dynamicMunicipios'),
                            'update' => '#CombosDependientes_codMunicipio'
-                       ),'prompt' => 'Seleccione un País...'
+                       ),'prompt' => 'País de Nacimiento...'
                  )
              );
        ?>
@@ -111,14 +120,14 @@
                 </td>
                 
                 <td>
-		<?php echo $form->labelEx($model,'Nacionalidad'); ?>
-		<?php echo $form->textField($model,'Nacionalidad',array('size'=>14,'maxlength'=>14)); ?>
+		<?php //echo $form->labelEx($model,'Nacionalidad'); ?>
+		<?php echo $form->textField($model,'Nacionalidad',array('size'=>14,'maxlength'=>14,'placeholder'=>'Nacionalidad')); ?>
 		<?php echo $form->error($model,'Nacionalidad'); ?>                    
                 </td>
                 
                 <td>
-		<?php echo $form->labelEx($model,'Región'); ?>
-		<?php echo $form->textField($model,'region',array('size'=>14,'maxlength'=>14)); ?>
+		<?php //echo $form->labelEx($model,'Región'); ?>
+		<?php echo $form->textField($model,'region',array('size'=>14,'maxlength'=>14,'placeholder'=>'region')); ?>
 		<?php echo $form->error($model,'region'); ?>                    
                 </td>
             </tr>
@@ -128,7 +137,9 @@
                 <td>
 		<?php echo $form->labelEx($model,'Estado Civil'); ?>
 		<?php echo $form->textField($model,'Estadocivil',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'Estadocivil'); ?>                    
+		<?php echo $form->error($model,'Estadocivil'); ?>     
+                    
+<?php echo $form->dropDownList($model,'Estadocivil',array("Casado"=>"Casado","Soltero"=>"Soltero"),array('empty'=>'Estatus Social')); ?>                    
                 </td>
                 
                 
@@ -144,6 +155,51 @@
 		<?php echo $form->error($model,'ConyugeExaUM'); ?>                    
                 </td>
             </tr>
+    </table>
+        
+        
+    <h2>Datos Generales</h2>
+    
+    
+        <table class="table table-striped">
+            <tr>
+                <td>
+                 <?php echo $form->labelEx($model,'Generacion Ej: 1970'); ?>
+		<?php echo $form->textField($model,'Gen'); ?>
+		<?php echo $form->error($model,'Gen'); ?>   
+                </td>
+                
+               <td>
+               <?php echo $form->labelEx($model,'Vive?'); ?>                    
+                   <input type="radio" name="vive" class="radio" value="male" checked="">Si
+               <input type="radio" name="vive"  class="radio" value="female">No                    
+               <?php echo $form->error($model,'vive'); ?> 
+                              
+                </td>
+                
+                
+                <td>
+		<?php echo $form->labelEx($model,'matricula'); ?>
+		<?php echo $form->textField($model,'matricula'); ?>
+		<?php echo $form->error($model,'matricula'); ?>                    
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>
+		              
+
+                
+                </td>   
+                
+
+                
+        
+            </tr>
+            
+            
+            
+           
             
             
             <tr>
@@ -295,39 +351,94 @@
         </table>
         
 
-<h1>Yii CJuiDatePicker: Date Format</h1>
-<script>
-  $(function() {
-    $( "#date-format" ).change(function() {
-      $( "#datepicker-date-format" ).datepicker( "option", "dateFormat", $( this ).val() );
-    });
-  });
-  </script>
-<p>Format options:<br />
-  <select id="date-format">
-    <option value="mm/dd/yy">Default - mm/dd/yy</option>
-    <option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
-    <option value="d M, y">Short - d M, y</option>
-    <option value="d MM, y">Medium - d MM, y</option>
-    <option value="DD, d MM, yy">Full - DD, d MM, yy</option>
-    <option value="'day' d 'of' MM 'in the year' yy">With text - 'day' d 'of' MM 'in the year' yy</option>
-  </select>
-</p>
-<?php
-$this->widget('zii.widgets.jui.CJuiDatePicker',array(
-    'name'=>'datepicker-date-format',    
-    'value'=>date('d/m/Y'),
-    'options'=>array(        
-        'showButtonPanel'=>true,
-        'dateFormat'=>'mm/dd/yy',//Date format 'mm/dd/yy','yy-mm-dd','d M, y','d MM, y','DD, d MM, yy'
-    ),
-    'htmlOptions'=>array(
-        'style'=>''
-    ),
-));
-?>
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ <!--subid imagen -->
+ <script>
+// this script executes when click on upload images link
+    function uploadImage() {
+        $("#forum_image").click();
+        return false;
+}
+</script>
+ 
+<script type="text/javascript">
+// this script for collecting the form data and pass to the controller action and doing the on success validations
+function send(){
+    var formData = new FormData($("#post-form")[0]);
+    $.ajax({
+        url: '<?php echo Yii::app()->createUrl("forumPost/uploadPost"); ?>',
+        type: 'POST',
+        data: formData,
+        datatype:'json',
+        // async: false,
+        beforeSend: function() {
+            // do some loading options
+        },
+        success: function (data) {
+            // on success do some validation or refresh the content div to display the uploaded images 
+            jQuery("#list-of-post").load("<?php echo Yii::app()->createUrl('//forumPost/forumPostDisplay'); ?>");
+        },
+ 
+        complete: function() {
+            // success alerts
+        },
+ 
+        error: function (data) {
+            alert("There may a error on uploading. Try again later";)
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+ 
+    return false;
+}
+</script>
+<!-- cierra suibid imagen -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+
+
+
+
+
+
+
+
+
+
+
