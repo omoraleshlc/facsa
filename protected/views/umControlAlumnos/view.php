@@ -15,13 +15,13 @@ $this->menu=array(
 	array('label'=>'Administrar', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Lista de Ex-Alumnos <?php echo $model->keyAlumnos; ?></h1>
+ <?php echo CHtml::image('images/i_imagen.jpeg', 'Nombre',array('width'=>50,'height'=>50)); ?>
+<h1>Datos del Ex-Alumno <?php //echo $model->keyAlumnos; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'keyAlumnos',
+		
 		'Gen',
 		'vive',
 		'matricula',

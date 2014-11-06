@@ -3,7 +3,7 @@
 /* @var $model UmControlAlumnos */
 
 $this->breadcrumbs=array(
-	'Um Control Alumnoses'=>array('index'),
+	'Inicio de Ex-Alumnos'=>array('index'),
 	'Create',
 );
 
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Nuevo Ex-Alumno</h1>
+<h1>Agregar Ex-Alumno</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

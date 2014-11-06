@@ -6,14 +6,27 @@ $this->breadcrumbs=array(
 	'Main',
 );
 
+
+/*
 $this->menu=array(
 	array('label'=>'Agregar', 'url'=>array('create')),
 	array('label'=>'Administrar ', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Reportes</h1>
-<br><br>
+
+<div class="container">
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
     <?php 
 // Creating an Yii Extension component 
 $flashChart = Yii::createComponent('application.modules.yiiopenflashchart.EOFC2'); 
@@ -38,6 +51,15 @@ $listaPaises = Yii::app()->db->createCommand()
                 ->where('pais<>"" ')
                 ->group('pais')                
                 ->queryAll();
+
+
+
+
+
+
+
+
+
 
 
 $connection=Yii::app()->db; 
@@ -67,7 +89,7 @@ $cPaises=(int) $myrow['cantidadPaises'];
 			'width' => 800,
 			'height' => 1200,
 	)));
-
+/*
         $this->widget('application.extensions.Hzl.google.HzlVisualizationChart', array('visualization' => 'Map',
             'packages'=>'map',//default is corechart
             //'loadVersion'=>1.1,//default is 1.  As for Calendar, you need change to 1.1
@@ -76,7 +98,7 @@ $cPaises=(int) $myrow['cantidadPaises'];
                 'width' => 800,
 		'height' => 800,
                 'showTip'=>true,
-                )));
+                )));*/
 //$flashChart->renderData('bar_stack'); 
 
 /*
@@ -87,6 +109,10 @@ $flashChart->renderData('line',array(),'stuff','chart2'); */
 //echo '<div id="chartDomId"></div>'; 
 ?>
 
+
+
+
+<?php /*
 <div class="row"> 
     <div class="span" >  
         <?php
@@ -172,7 +198,7 @@ $tipoAlumno = Yii::app()->db->createCommand()
         ?>
  
     </div>
-</div>
+
 
 
 

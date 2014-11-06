@@ -12,37 +12,20 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	
    
-    
+    <h2>Lista de Variables</h2>
 
 	<?php echo $form->errorSummary($model); ?>
     <br>
-    <h2>Datos Personales</h2>
+    <h3><div class="success">Identificación</div></h3>
     
     <table class="table table-striped">
     <tr>
         
-        <td>
-    <?php //echo $form->labelEx($model,'nombre1'); ?>
-		<?php echo $form->textField($model,'nombre1',array('size'=>13,'maxlength'=>13,'placeholder'=>'Nombre1')); ?>
-		<?php echo $form->error($model,'nombre1'); ?>    
-        </td>
-        
-        <td>
-       		<?php //echo $form->labelEx($model,'nombre2'); ?>
-		<?php echo $form->textField($model,'nombre2',array('size'=>19,'maxlength'=>19,'placeholder'=>'Nombre2')); ?>
-		<?php echo $form->error($model,'nombre2'); ?>     
-        </td>
-        
-        <td></td>
-    </tr>
-    
-    
-    <tr>
                 <td>
                 <?php //echo $form->labelEx($model,'apellidos1'); ?>
 		<?php echo $form->textField($model,'apellidos1',array('size'=>24,'maxlength'=>24,'placeholder'=>'Apellidos1')); ?>
@@ -54,23 +37,73 @@
 		<?php echo $form->textField($model,'apellidos2',array('size'=>12,'maxlength'=>12,'placeholder'=>'Apellidos2')); ?>
 		<?php echo $form->error($model,'apellidos2'); ?>                    
                 </td>
+                
+               <td>
+		<?php //echo $form->labelEx($model,'matricula'); ?>
+		<?php echo $form->textField($model,'matricula',array('size'=>12,'maxlength'=>12,'placeholder'=>'Apellidos2')); ?>
+		<?php echo $form->error($model,'matricula'); ?>                    
+                </td>
+
+   
+    </tr>
+    
+    
+    <tr>
+        <td>
+    <?php //echo $form->labelEx($model,'nombre1'); ?>
+		<?php echo $form->textField($model,'nombre1',array('size'=>13,'maxlength'=>13,'placeholder'=>'Nombre1')); ?>
+		<?php echo $form->error($model,'nombre1'); ?>    
+        </td>
+        
+        <td>
+       		<?php //echo $form->labelEx($model,'nombre2'); ?>
+		<?php echo $form->textField($model,'nombre2',array('size'=>19,'maxlength'=>19,'placeholder'=>'Nombre2')); ?>
+		<?php echo $form->error($model,'nombre2'); ?>     
+        </td>
+        <td></td>
+    </tr>
+    
+    
+    <tr>
+                        <td>
+                 <?php echo $form->labelEx($model,'Generacion Ej: 1970'); ?>
+		<?php echo $form->textField($model,'Gen'); ?>
+		<?php echo $form->error($model,'Gen'); ?>   
+                </td>
+                
+               <td>
+               <?php echo $form->labelEx($model,'Vive?'); ?>                    
+                   <input type="radio" name="vive" class="radio" value="si" checked="">Si
+               <input type="radio" name="vive"  class="radio" value="no">No                    
+               <?php echo $form->error($model,'vive'); ?> 
+                              
+                </td>
                 <td></td>
     </tr>
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
      <tr>
-                <td>
-		<?php //echo $form->labelEx($model,'Hermanos'); ?>
-		<?php echo $form->textField($model,'Hermanos',array('size'=>1,'maxlength'=>1,'placeholder'=>'Hermanos')); ?>
-		<?php echo $form->error($model,'Hermanos'); ?>                    
-                </td>   
+         <td><?php echo $form->labelEx($model,'fechaNacimiento'); ?>               </td>
                 
                 <td>
 
 
 	       
-		<?php echo $form->labelEx($model,'fechaNacimiento'); ?>                    
+		     
 <?php
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
     'name'=>'fechaNacimiento',    
@@ -94,12 +127,13 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 		<?php echo $form->textField($model,'lugarNacimiento',array('size'=>26,'maxlength'=>26,'placeholder'=>'Lugar de Nacimiento')); ?>
 		<?php echo $form->error($model,'lugarNacimiento'); ?>                    
                 </td>
+                
+                
             </tr>
             
             
-            
             <tr>
-                <td>
+<td>
        <?php //echo $form->labelEx($model,'País de Nacimiento'); ?>
        <?php
              $departamento = new CDbCriteria;
@@ -117,7 +151,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
              );
        ?>
        <?php //echo $form->error($model,'codDepartamento'); ?>                    
-                </td>
+</td>
                 
                 <td>
 		<?php //echo $form->labelEx($model,'Nacionalidad'); ?>
@@ -130,78 +164,307 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 		<?php echo $form->textField($model,'region',array('size'=>14,'maxlength'=>14,'placeholder'=>'region')); ?>
 		<?php echo $form->error($model,'region'); ?>                    
                 </td>
+              
             </tr>
             
             
+            
+            
+            
+            
             <tr>
+                  <td>
+		<?php //echo $form->labelEx($model,'Hermanos'); ?>
+		<?php echo $form->textField($model,'Hermanos',array('size'=>1,'maxlength'=>1,'placeholder'=>'Hermanos')); ?>
+		<?php echo $form->error($model,'Hermanos'); ?>                    
+                </td> 
+                <td></td>
+                <td></td>
+            </tr>            
+            </table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    <br>
+            
+            
+            
+         <h3>Académicas</h3>   
+         <table class="table table-striped">
+             <tr>
                 <td>
-		<?php echo $form->labelEx($model,'Estado Civil'); ?>
-		<?php echo $form->textField($model,'Estadocivil',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'Estadocivil'); ?>     
-                    
-<?php echo $form->dropDownList($model,'Estadocivil',array("Casado"=>"Casado","Soltero"=>"Soltero"),array('empty'=>'Estatus Social')); ?>                    
+		<?php //echo $form->labelEx($model,'Promedio'); ?>
+		<?php echo $form->textField($model,'promedioCarrera',array('size'=>27,'maxlength'=>27,'placeholder'=>'Promedio Carrera')); ?>
+		<?php echo $form->error($model,'promedioCarrera'); ?>                    
                 </td>
-                
-                
-                <td>
-		<?php echo $form->labelEx($model,'Conyuge'); ?>
-		<?php echo $form->textField($model,'Conyuge',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'Conyuge'); ?>                    
-                </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'Su Cónyuge es Ex Alumno?'); ?>
-		<?php echo $form->textField($model,'ConyugeExaUM',array('size'=>2,'maxlength'=>2)); ?>
-		<?php echo $form->error($model,'ConyugeExaUM'); ?>                    
-                </td>
-            </tr>
-    </table>
-        
-        
-    <h2>Datos Generales</h2>
-    
-    
-        <table class="table table-striped">
-            <tr>
-                <td>
-                 <?php echo $form->labelEx($model,'Generacion Ej: 1970'); ?>
-		<?php echo $form->textField($model,'Gen'); ?>
-		<?php echo $form->error($model,'Gen'); ?>   
-                </td>
-                
+
                <td>
-               <?php echo $form->labelEx($model,'Vive?'); ?>                    
-                   <input type="radio" name="vive" class="radio" value="male" checked="">Si
-               <input type="radio" name="vive"  class="radio" value="female">No                    
+               <?php echo $form->labelEx($model,'Titulado?'); ?>                    
+                   <input type="radio" name="titulado" class="radio" value="si" checked="">Si
+               <input type="radio" name="titulado"  class="radio" value="no">No                    
                <?php echo $form->error($model,'vive'); ?> 
                               
-                </td>
+                </td> 
+                
                 
                 
                 <td>
-		<?php echo $form->labelEx($model,'matricula'); ?>
-		<?php echo $form->textField($model,'matricula'); ?>
-		<?php echo $form->error($model,'matricula'); ?>                    
+                    		     
+<?php
+$this->widget('zii.widgets.jui.CJuiDatePicker',array(
+    'name'=>'fechaTitulacion',    
+    'value'=>date('Y-m-d'),
+    'options'=>array(        
+        'showButtonPanel'=>true,
+        'dateFormat'=>'yy-mm-dd',//Date format 'mm/dd/yy','yy-mm-dd','d M, y','d MM, y','DD, d MM, yy'
+    ),
+    'htmlOptions'=>array(
+        'style'=>''
+    ),
+));
+?>
+	<?php echo $form->error($model,'fechaTitulacion'); ?>  
                 </td>
-            </tr>  
+                
+                
+                
+                
+                
+             </tr>
+             
+             
+             <tr>
+                 <td>
+                     <?php echo $form->labelEx($model,'Año de CENEVAL'); ?>
+<?php
+$this->widget('zii.widgets.jui.CJuiDatePicker',array(
+    'name'=>'yearceneval',    
+    'value'=>date('Y-m-d'),
+    'options'=>array(        
+        'showButtonPanel'=>true,
+        'dateFormat'=>'yy-mm-dd',//Date format 'mm/dd/yy','yy-mm-dd','d M, y','d MM, y','DD, d MM, yy'
+         
+    ),
+    'htmlOptions'=>array(
+        'style'=>''
+    ),
+));
+?>
+	<?php echo $form->error($model,'yearceneval'); ?>                       
+                 </td>
+                 
+                 <td>
+                <td>
+		<?php echo $form->labelEx($model,'Puntos Obtenidos'); ?>
+		<?php echo $form->textField($model,'puntosCeneval',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'puntosCeneval'); ?>                    
+                </td>                     
+                 </td>
+                 
+                 <td>
+                     
+                 </td>
+             </tr>
+         </table>
+        
+        
+    
+    
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         <br>         
+         <h3><div class="success">Postgrado</div></h3>  
+        <table class="table table-striped">
+
+            <tr>
+                <td>
+		<?php echo $form->labelEx($model,'Tiene algún postgrado?'); ?>
+		<?php echo $form->textField($model,'Postgrado',array('size'=>1,'maxlength'=>1)); ?>
+		<?php echo $form->error($model,'Postgrado'); ?>                    
+                </td>            
+ 
+                
+                <td>
+		<?php echo $form->labelEx($model,'Tipo de postgrado'); ?>
+		<?php echo $form->textField($model,'tipoPostgrado',array('size'=>1,'maxlength'=>1)); ?>
+		<?php echo $form->error($model,'tipoPostgrado'); ?>                    
+                </td>                   
+           
+                <td></td>
+            </tr>
+            
+            <tr>
+                                <td>
+		<?php echo $form->labelEx($model,'Especialidad'); ?>
+		<?php echo $form->textField($model,'Especialidad',array('size'=>37,'maxlength'=>37)); ?>
+		<?php echo $form->error($model,'Especialidad'); ?>                    
+                </td>
+                
+                <td>
+		<?php echo $form->labelEx($model,'Subespecialidad'); ?>
+		<?php echo $form->textField($model,'Subespecialidad',array('size'=>28,'maxlength'=>28)); ?>
+		<?php echo $form->error($model,'Subespecialidad'); ?>                    
+                </td>
+                <td></td>
+            </tr>
             
             <tr>
                 <td>
-		              
-
+		<?php echo $form->labelEx($model,'Maestria en'); ?>
+		<?php echo $form->textField($model,'Maestria',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'Maestria'); ?>                    
+                </td>
                 
-                </td>   
+                <td>
+		<?php echo $form->labelEx($model,'Residencia'); ?>
+		<?php echo $form->textField($model,'Residencia',array('size'=>26,'maxlength'=>26)); ?>
+		<?php echo $form->error($model,'Residencia'); ?>                    
+                </td>
                 
-
+                <td></td>
                 
-        
             </tr>
+        </table>
             
             
+         
+         
+         
+                  <br>         
+         <h3><div class="success">Laborales Actuales</div></h3>    
             
-           
+         <table class="table table-striped">
+          
+         <tr>
+              <td>
+       <?php echo $form->labelEx($model,'País Actual'); ?>
+       <?php
+             $departamento = new CDbCriteria;
+             $departamento->order = 'name ASC';
+       ?>
+       <?php
+             echo $form->dropDownList($model,'paisActual',CHtml::listData(CatPaises::model()->findAll($departamento),'num','name'),
+                       array(
+                           'ajax' => array(
+                           'type' => 'POST',
+                           'url' => CController::createUrl('CombosDependientes/dynamicMunicipios'),
+                           'update' => '#CombosDependientes_codMunicipio'
+                       ),'prompt' => 'País Actual...'
+                 )
+             );
+       ?>
+       <?php //echo $form->error($model,'codDepartamento'); ?>                    
+                </td>
+                
+                
+                <td>
+		<?php echo $form->labelEx($model,'Estado Actual'); ?>
+		<?php echo $form->textField($model,'estadoActual',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'estadoActual'); ?>                    
+                </td>                
+             
+                
+                <td>
+		<?php echo $form->labelEx($model,'Ciudad Actual'); ?>
+		<?php echo $form->textField($model,'ciudadActual',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'ciudadActual'); ?>                    
+                </td>                  
+         </tr>   
             
-            
+         
+         <tr>
+                <td>
+		<?php echo $form->labelEx($model,'Institución Actual'); ?>
+		<?php echo $form->textField($model,'institucionActual',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'institucionActual'); ?>                    
+                </td>  
+                
+                
+                <td>
+		<?php echo $form->labelEx($model,'Puesto que ocupa'); ?>
+		<?php echo $form->textField($model,'puestoActual',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'puestoActual'); ?>                    
+                </td>   
+                <td></td>
+         </tr>
+         
+         <tr>
+                <td>
+		<?php echo $form->labelEx($model,'¿Puesto destacado?'); ?>
+		<?php echo $form->textField($model,'puestoDestacado',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'puestoDestacado'); ?>                    
+                </td> 
+                
+                <td>
+		<?php echo $form->labelEx($model,'¿Cual Puesto destacado?'); ?>
+		<?php echo $form->textField($model,'cualPuestoDestacado',array('size'=>27,'maxlength'=>27)); ?>
+		<?php echo $form->error($model,'cualPuestoDestacado'); ?>                    
+                </td>  
+                
+                <td></td>
+         </tr>
+         </table>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         <br>         
+         <h3><div class="success">Comunicación</div></h3>    
+            <table class="table table-striped">
+                
+                
+                
+                
+                
+                <tr>
+                    
+                <td>
+		<?php echo $form->labelEx($model,'email1'); ?>
+		<?php echo $form->textField($model,'email1',array('size'=>38,'maxlength'=>38)); ?>
+		<?php echo $form->error($model,'email1'); ?>                    
+                </td>                    
+                    
+                <td>
+		<?php echo $form->labelEx($model,'email2'); ?>
+		<?php echo $form->textField($model,'email2',array('size'=>37,'maxlength'=>37)); ?>
+		<?php echo $form->error($model,'email2'); ?>                    
+                </td>
+                
+                <td></td>                
+
+                </tr>                
+                
+                
+                
+                
+                
+                
             <tr>
                 <td>
 		<?php echo $form->labelEx($model,'Nombre en Facebook'); ?>
@@ -216,82 +479,18 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                 </td>
                 
                 <td>
-		<?php echo $form->labelEx($model,'Puesto'); ?>
-		<?php echo $form->textField($model,'Puesto',array('size'=>2,'maxlength'=>2)); ?>
-		<?php echo $form->error($model,'Puesto'); ?>                    
-                </td>
-            </tr>
-            
-            
-            <tr>
-                <td>
-		<?php echo $form->labelEx($model,'vive en'); ?>
-		<?php echo $form->textField($model,'viveEn',array('size'=>24,'maxlength'=>24)); ?>
-		<?php echo $form->error($model,'viveEn'); ?>                    
-                </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'Ciudad'); ?>
-		<?php echo $form->textField($model,'Ciudad',array('size'=>21,'maxlength'=>21)); ?>
-		<?php echo $form->error($model,'Ciudad'); ?>                    
-                </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'Tiene algún postgrado?'); ?>
-		<?php echo $form->textField($model,'Postgrado',array('size'=>1,'maxlength'=>1)); ?>
-		<?php echo $form->error($model,'Postgrado'); ?>                    
-                </td>
-            
-            <tr>
-                <td>
-		<?php echo $form->labelEx($model,'Especialidad'); ?>
-		<?php echo $form->textField($model,'Especialidad',array('size'=>37,'maxlength'=>37)); ?>
-		<?php echo $form->error($model,'Especialidad'); ?>                    
-                </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'Subespecialidad'); ?>
-		<?php echo $form->textField($model,'Subespecialidad',array('size'=>28,'maxlength'=>28)); ?>
-		<?php echo $form->error($model,'Subespecialidad'); ?>                    
-                </td>
-                
-                
-                <td>
-		<?php echo $form->labelEx($model,'Maestria en'); ?>
-		<?php echo $form->textField($model,'Maestria',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'Maestria'); ?>                    
-                </td>
-                
-            </tr>
-            
-            
-            <tr>
-                <td>
-		<?php echo $form->labelEx($model,'Residencia'); ?>
-		<?php echo $form->textField($model,'Residencia',array('size'=>26,'maxlength'=>26)); ?>
-		<?php echo $form->error($model,'Residencia'); ?>                    
-                </td>
-                
-                <td>
 		<?php echo $form->labelEx($model,'Twitter'); ?>
 		<?php echo $form->textField($model,'Twitter',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'Twitter'); ?>                    
-                </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'email1'); ?>
-		<?php echo $form->textField($model,'email1',array('size'=>38,'maxlength'=>38)); ?>
-		<?php echo $form->error($model,'email1'); ?>                    
-                </td>
+                </td>                
+
             </tr>
-        
             
+            
+            
+           
             <tr>
-                <td>
-		<?php echo $form->labelEx($model,'email2'); ?>
-		<?php echo $form->textField($model,'email2',array('size'=>37,'maxlength'=>37)); ?>
-		<?php echo $form->error($model,'email2'); ?>                    
-                </td>
+
                 
                 <td>
 		<?php echo $form->labelEx($model,'Teléfono de Casa'); ?>
@@ -304,59 +503,80 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 		<?php echo $form->textField($model,'telTrabajo',array('size'=>17,'maxlength'=>17)); ?>
 		<?php echo $form->error($model,'telTrabajo'); ?>                    
                 </td>
-            </tr>
-            
-            
-            <tr>
+                
                 <td>
 		<?php echo $form->labelEx($model,'Teléfono Móvil'); ?>
 		<?php echo $form->textField($model,'telCelular',array('size'=>18,'maxlength'=>18)); ?>
 		<?php echo $form->error($model,'telCelular'); ?>                    
                 </td>
-                
-                <td>
-		<?php echo $form->labelEx($model,'Ciudad donde reside actualmente'); ?>
-		<?php echo $form->textField($model,'ciudadResidencia',array('size'=>36,'maxlength'=>36)); ?>
-		<?php echo $form->error($model,'ciudadResidencia'); ?>                    
-                </td>
-                
+            </tr>            
+            
+            
+            <tr>
                 <td>
 		<?php echo $form->labelEx($model,'Dirección'); ?>
 		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>66)); ?>
 		<?php echo $form->error($model,'direccion'); ?>                    
                 </td>
+                <td></td>
+                <td></td>
             </tr>
+            </table>
             
             
             
+            
+            
+            
+         <br>         
+         <h3><div class="success">Sociales</div></h3>    
+            <table class="table table-striped">
             <tr>
                 <td>
-		<?php echo $form->labelEx($model,'Trabajo'); ?>
-		<?php echo $form->textField($model,'Trabajo',array('size'=>48,'maxlength'=>48)); ?>
-		<?php echo $form->error($model,'Trabajo'); ?>                    
+		<?php echo $form->labelEx($model,'Estado Civil'); ?>
+		<?php //echo $form->textField($model,'Estadocivil',array('size'=>10,'maxlength'=>10)); ?>
+		<?php //echo $form->error($model,'Estadocivil'); ?>     
+                    
+<?php echo $form->dropDownList($model,'Estadocivil',array("Casado"=>"Casado","Soltero"=>"Soltero"),array('empty'=>'Estatus Social')); ?>                    
                 </td>
                 
                 <td>
-		<?php echo $form->labelEx($model,'Trabajo2'); ?>
-		<?php echo $form->textField($model,'Trabajo2',array('size'=>42,'maxlength'=>42)); ?>
-		<?php echo $form->error($model,'Trabajo2'); ?>                    
+		<?php echo $form->labelEx($model,'Conyuge'); ?>
+		<?php echo $form->textField($model,'Conyuge',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'Conyuge'); ?>                    
                 </td>
                 
                 <td>
-                	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>    
+		<?php echo $form->labelEx($model,'Su Cónyuge es Ex Alumno?'); ?>
+		<?php echo $form->textField($model,'ConyugeExaUM',array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->error($model,'ConyugeExaUM'); ?>                    
                 </td>
             </tr>
-        </table>
+                
+
+ 
+            <tr>
+                 <td>
+		<?php echo $form->labelEx($model,'¿Hermanos Egresados?'); ?>
+		<?php echo $form->textField($model,'hermanosEgresados',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'hermanosEgresados'); ?>                    
+                </td>
+                
+                                 <td>
+		<?php echo $form->labelEx($model,'¿Hijo de Egresado?'); ?>
+		<?php echo $form->textField($model,'Conyuge',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'Conyuge'); ?>                    
+                </td>
+                
+                <td></td>
+            </tr>
+            </table>
+            
         
 
 
     
-    
-    
-    
-    
+
     
     
     
