@@ -13,13 +13,43 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>true,
+    'htmlOptions' => array(
+        'enctype' => 'multipart/form-data',
+    ),
 )); ?>
 
 	
    
+    
+
+    
+    
+        <div class="row">
+        <?php echo $form->labelEx($model,'user_photo'); ?>
+        <?php echo CHtml::activeFileField($model, 'user_photo'); ?> 
+        <?php echo $form->error($model,'user_photo'); ?>
+</div>
+<?php if($model->isNewRecord!='1'){ ?>
+<div class="row">
+     <?php echo CHtml::image(Yii::app()->request->baseUrl.'/imagenes/'.$model->user_photo,"user_photo",array("width"=>200)); ?> 
+</div>
+<?php } ?>
+    
+    
+    
+    
+    
+    
+    
     <h2>Lista de Variables</h2>
 
 	<?php echo $form->errorSummary($model); ?>
+    
+    
+
+    
+    
+    
     <br>
     <h3><div class="success">Identificación</div></h3>
     
@@ -40,7 +70,7 @@
                 
                <td>
 		<?php //echo $form->labelEx($model,'matricula'); ?>
-		<?php echo $form->textField($model,'matricula',array('size'=>12,'maxlength'=>12,'placeholder'=>'Apellidos2')); ?>
+		<?php echo $form->textField($model,'matricula',array('size'=>12,'maxlength'=>12,'placeholder'=>'Matricula')); ?>
 		<?php echo $form->error($model,'matricula'); ?>                    
                 </td>
 
@@ -577,7 +607,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 
     
 
-    
+         <button type="submit" class="btn btn-default" value="Agregar">Agregar</button>
     
     
     

@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Inicio de Ex-Alumnos'=>array('index'),
-	'Create',
+	'Crear/Nuevo',
 );
 
 $this->menu=array(

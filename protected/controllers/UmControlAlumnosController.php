@@ -27,6 +27,10 @@ class UmControlAlumnosController extends Controller
 	public function accessRules()
 	{
 		return array(
+                        array('allow',
+                       'actions' => array('index', 'subirimagen', 'update','create','admin'),
+                       'users' => array('@')
+                        ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
@@ -62,6 +66,8 @@ class UmControlAlumnosController extends Controller
 	 */
 	public function actionCreate()
 	{
+        
+            
 		$model=new UmControlAlumnos;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -69,12 +75,14 @@ class UmControlAlumnosController extends Controller
 
 		if(isset($_POST['UmControlAlumnos']))
 		{
-			$model->attributes=$_POST['UmControlAlumnos'];
-			if($model->save())
+		$model->attributes=$_POST['UmControlAlumnos'];
+                if($model->save())
 				$this->redirect(array('view','id'=>$model->keyAlumnos));
-		}
-
-		$this->render('create',array(
+		
+                }
+                
+                
+                $this->render('create',array(
 			'model'=>$model,
 		));
 	}
@@ -146,6 +154,10 @@ class UmControlAlumnosController extends Controller
 		));
 	}
 
+        
+        
+        
+        
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
