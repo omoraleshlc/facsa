@@ -12,8 +12,8 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
-    'htmlOptions' => array(
+	'enableAjaxValidation'=>TRUE,
+   'htmlOptions' => array(
         'enctype' => 'multipart/form-data',
     ),
 )); ?>
@@ -24,19 +24,8 @@
 
     
     
-        <div class="row">
-        <?php echo $form->labelEx($model,'user_photo'); ?>
-        <?php echo CHtml::activeFileField($model, 'user_photo'); ?> 
-        <?php echo $form->error($model,'user_photo'); ?>
-</div>
-<?php if($model->isNewRecord!='1'){ ?>
-<div class="row">
-     <?php echo CHtml::image(Yii::app()->request->baseUrl.'/imagenes/'.$model->user_photo,"user_photo",array("width"=>200)); ?> 
-</div>
-<?php } ?>
-    
-    
-    
+
+  
     
     
     
@@ -46,10 +35,23 @@
 	<?php echo $form->errorSummary($model); ?>
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
     
-    
+    <?php echo CHtml::submitButton('Agregar/Actualizar',array('class'=>'btn btn-primary')); ?>
     <br>
     <h3><div class="success">Identificación</div></h3>
     
@@ -102,11 +104,20 @@
                 </td>
                 
                <td>
-               <?php echo $form->labelEx($model,'Vive?'); ?>                    
-                   <input type="radio" name="vive" class="radio" value="si" checked="">Si
-               <input type="radio" name="vive"  class="radio" value="no">No                    
-               <?php echo $form->error($model,'vive'); ?> 
-                              
+               <?php //echo $form->labelEx($model,'Vive?'); ?>     
+                   <?php //echo $form->textField($model,'Gen',array("type"=>"radio",'name'=>'vive','value'=>'Si','class'=>'radio','checked'=>'')); ?>
+                   <?php //echo $form->textField($model,'Gen',array("type"=>"radio",'name'=>'vive','value'=>'No','class'=>'radio')); ?>
+                                
+               <?php //echo $form->error($model,'vive'); ?> 
+                     
+                   
+
+        <?php echo $form->labelEx($model,'vive'); ?>
+        <?php echo $form->radioButtonList($model,'vive',array('vive'=>'Si')); ?>
+        
+        <?php echo $form->radioButtonList($model,'vive',array('vive'=>'No')); ?>
+        <?php echo $form->error($model,'vive'); ?>
+                  
                 </td>
                 <td></td>
     </tr>
@@ -136,8 +147,12 @@
 		     
 <?php
 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
-    'name'=>'fechaNacimiento',    
-    'value'=>date('Y-m-d'),
+    'model'=>$model,
+    'name'=>'UmControlAlumnos[fechaNacimiento]',
+    'value'=>$model->fechaNacimiento,
+   
+    
+    //'value'=>date('Y-m-d'),
     'options'=>array(        
         'showButtonPanel'=>true,
         'dateFormat'=>'yy-mm-dd',//Date format 'mm/dd/yy','yy-mm-dd','d M, y','d MM, y','DD, d MM, yy'
@@ -149,7 +164,6 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 ?>
 	<?php echo $form->error($model,'fechaNacimiento'); ?>  
 
-              
                 </td>
                 
                 <td>
@@ -606,8 +620,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
 
 
     
-
-         <button type="submit" class="btn btn-default" value="Agregar">Agregar</button>
+<?php echo CHtml::submitButton('Agregar',array('class'=>'btn btn-primary')); ?>
     
     
     

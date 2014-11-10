@@ -64,6 +64,8 @@ class UmControlAlumnos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+                        [['nombre1', 'apellidos1','matricula'], 'required'],#campos obligatorios
+                        [['Gen', 'fechaNacimiento'], 'required'],#campos obligatorios
 			array('Gen, matricula', 'numerical', 'integerOnly'=>true),
 			array('keyA, fechaNacimiento, Estadocivil, Twitter', 'length', 'max'=>10),
 			array('vive, ConyugeExaUM, Puesto', 'length', 'max'=>2),
@@ -87,7 +89,7 @@ class UmControlAlumnos extends CActiveRecord
 			array('direccion', 'length', 'max'=>66),
 			array('Trabajo', 'length', 'max'=>48),
 			array('Trabajo2', 'length', 'max'=>42),
-                    array('user_photo', 'length', 'max'=>42),
+                    //array('user_photo', 'length', 'max'=>42),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('keyA, Gen, vive, matricula, apellidos1, apellidos2, nombre1, nombre2, Hermanos, fechaNacimiento, lugarNacimiento, pais, Nacionalidad, region, Estadocivil, Conyuge, ConyugeExaUM, NombreFacebook, URLFacebook, Puesto, viveEn, Ciudad, Postgrado, Especialidad, Subespecialidad, Maestria, Residencia, Twitter, email1, email2, telCasa, telTrabajo, telCelular, ciudadResidencia, direccion, Trabajo, Trabajo2', 'safe', 'on'=>'search'),
