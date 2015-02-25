@@ -1,0 +1,8 @@
+data/readme.txt.i
+data/drivers/Image_GD_Driver.php.i
+data/drivers/Image_ImageMagick_Driver.php.i
+data/Image_Driver.php.i
+data/CImageComponent.php.i
+data/.hgtags.i
+data/composer.json.i
+data/Image.php.i

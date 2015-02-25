@@ -37,19 +37,19 @@ $flashChart->setTitle('Alumnos x País');
 
 
 $data = Yii::app()->db->createCommand()
-                ->select('pais')
-                ->from('um_controlAlumnos')
-                ->where('pais<>"" ')
-                ->group('pais')
+                ->select('paisNacimiento')
+                ->from('ex_alumnos')
+                ->where('paisNacimiento<>"" ')
+                ->group('paisNacimiento')
                 
                 ->queryAll();
 //$topepais = UmControlAlumnos::model()->findall();
 //very useful google chart
 $listaPaises = Yii::app()->db->createCommand()
-                ->select('pais,matricula')
-                ->from('um_controlAlumnos')
-                ->where('pais<>"" ')
-                ->group('pais')                
+                ->select('paisNacimiento,matricula')
+                ->from('ex_alumnos')
+                ->where('paisNacimiento<>"" ')
+                ->group('paisNacimiento')                
                 ->queryAll();
 
 
@@ -66,9 +66,9 @@ $connection=Yii::app()->db;
 $cPaises=null;
 	$stack = array(array("", "Cantidad de Alumnos"));
         foreach($listaPaises as $arrrr){          
-        $sSQL= "SELECT count(*) as cantidadPaises FROM um_controlAlumnos
+        $sSQL= "SELECT count(*) as cantidadPaises FROM ex_alumnos
         WHERE
-        pais='".$arrrr['pais']."'
+        paisNacimiento='".$arrrr['paisNacimiento']."'
         ";
 
 
@@ -76,7 +76,7 @@ $command4=$connection->createCommand($sSQL);
 $dataReader4=$command4->query();
 $myrow=$dataReader4->read();
 $cPaises=(int) $myrow['cantidadPaises'];
-           array_push($stack, array($arrrr['pais'], intval($cPaises)));
+           array_push($stack, array($arrrr['paisNacimiento'], intval($cPaises)));
 	}
         $nacionalidades=$stack;
         
@@ -112,7 +112,7 @@ $flashChart->renderData('line',array(),'stuff','chart2'); */
 
 
 
-<?php /*
+
 <div class="row"> 
     <div class="span" >  
         <?php
@@ -123,10 +123,10 @@ $stack=null;
 $tAlumno=null;
 
 $tipoAlumno = Yii::app()->db->createCommand()
-                ->select('Estadocivil')
-                ->from('um_controlAlumnos')
+                ->select('estadocivil')
+                ->from('ex_alumnos')
                 //->where('pais<>"" ')
-                ->group('Estadocivil')                
+                ->group('estadocivil')                
                 ->queryAll();
 
 
@@ -134,9 +134,9 @@ $tipoAlumno = Yii::app()->db->createCommand()
         
         
         foreach($tipoAlumno as $tp){          
-        $sSQL= "SELECT count(*) as tipoAlumno FROM um_controlAlumnos
+        $sSQL= "SELECT count(*) as tipoAlumno FROM ex_alumnos
         WHERE
-        Estadocivil='".$tp['Estadocivil']."'
+        estadocivil='".$tp['estadocivil']."'
         ";
 
 
@@ -144,11 +144,11 @@ $tipoAlumno = Yii::app()->db->createCommand()
         $dataReader4=$command4->query();
         $myrow=$dataReader4->read();
         $tAlumno=(int) $myrow['tipoAlumno'];
-        if(!$tp['Estadocivil']){
-            $tp['Estadocivil']='N/A';
+        if(!$tp['estadocivil']){
+            $tp['estadocivil']='N/A';
         }
         
-        array_push($stack, array($tp['Estadocivil'], intval($tAlumno)));
+        array_push($stack, array($tp['estadocivil'], intval($tAlumno)));
 	}
 
 

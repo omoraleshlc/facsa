@@ -49,7 +49,7 @@ class reports extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'um_controlAlumnos';
+		return 'ex_alumnos';
 	}
 
 	/**

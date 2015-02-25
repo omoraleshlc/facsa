@@ -1,6 +1,6 @@
 <?php
 
-class UmControlAlumnosController extends Controller
+class ExAlumnosController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,10 +27,6 @@ class UmControlAlumnosController extends Controller
 	public function accessRules()
 	{
 		return array(
-                        array('allow',
-                       'actions' => array('index', 'subirimagen', 'update','create','admin'),
-                       'users' => array('@')
-                        ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
@@ -41,7 +37,7 @@ class UmControlAlumnosController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('*'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -59,20 +55,6 @@ class UmControlAlumnosController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-        
-        
-        
-        
-
-    public function actionSubir()
-    {
-        return array(
-            'saveImageAttachment' => 'ext.imageAttachment.ImageAttachmentAction',
-        );
-    }
-  
-        
-        
 
 	/**
 	 * Creates a new model.
@@ -80,23 +62,19 @@ class UmControlAlumnosController extends Controller
 	 */
 	public function actionCreate()
 	{
-        
-            
-		$model=new UmControlAlumnos;
+		$model=new ExAlumnos;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['UmControlAlumnos']))
+		if(isset($_POST['ExAlumnos']))
 		{
-		$model->attributes=$_POST['UmControlAlumnos'];
-                if($model->save())
-				$this->redirect(array('view','id'=>$model->keyAlumnos));
-		
-                }
-                
-                
-                $this->render('create',array(
+			$model->attributes=$_POST['ExAlumnos'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->keyE));
+		}
+
+		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
@@ -113,11 +91,11 @@ class UmControlAlumnosController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['UmControlAlumnos']))
+		if(isset($_POST['ExAlumnos']))
 		{
-			$model->attributes=$_POST['UmControlAlumnos'];
+			$model->attributes=$_POST['ExAlumnos'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->keyAlumnos));
+				$this->redirect(array('view','id'=>$model->keyE));
 		}
 
 		$this->render('update',array(
@@ -144,7 +122,7 @@ class UmControlAlumnosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('UmControlAlumnos');
+		$dataProvider=new CActiveDataProvider('ExAlumnos');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -155,33 +133,26 @@ class UmControlAlumnosController extends Controller
 	 */
 	public function actionAdmin()
 	{
-            
-		$model=new UmControlAlumnos('search');
+		$model=new ExAlumnos('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['UmControlAlumnos']))
-			$model->attributes=$_GET['UmControlAlumnos'];
+		if(isset($_GET['ExAlumnos']))
+			$model->attributes=$_GET['ExAlumnos'];
 
-		
-                
-                $this->render('admin',array(
+		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
 
-        
-        
-        
-        
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return UmControlAlumnos the loaded model
+	 * @return ExAlumnos the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=UmControlAlumnos::model()->findByPk($id);
+		$model=ExAlumnos::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -189,44 +160,14 @@ class UmControlAlumnosController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param UmControlAlumnos $model the model to be validated
+	 * @param ExAlumnos $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='um-control-alumnos-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='ex-alumnos-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-        
-        
-        
-        public function actionDynamicMunicipios()
-   {
-       $data = Municipio::model()->findAll('codDepartamento=:parent_id',
-                       array(':parent_id'=>(int) $_POST['CombosDependientes']['codDepartamento']));
- 
- 
-       $data = CHtml::listData($data,'codMunicipio','strMunicipio');
-echo CHtml::tag('option',array('value' => ''),'Seleccione un municipio...',true);
-           foreach($data as $id => $value)
-           {
-               echo CHtml::tag('option',array('value' => $id),CHtml::encode($value),true);
-           }
- 
-   }
- 
-   public function actionDynamicCorregimientos()
-   {
-       $data = Corregimiento::model()->findAll('codMunicipio=:parent_id',
-                       array(':parent_id'=>(int) $_POST['CombosDependientes']['codMunicipio']));
- 
-       $data = CHtml::listData($data,'codCorregimiento','strCorregimiento');
-echo CHtml::tag('option',array('value' => ''),'Seleccione un corregimiento...',true);
-           foreach($data as $id => $value)
-           {
-               echo CHtml::tag('option',array('value' => $id),CHtml::encode($value),true);
-           }
-   }
 }

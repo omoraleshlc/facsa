@@ -56,6 +56,7 @@ class UmControlAlumnos extends CActiveRecord
 	 * @return array validation rules for model attributes.
 	 */
         
+    
         
       
         
