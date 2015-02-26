@@ -3,16 +3,16 @@
 /* @var $model ExAlumnos */
 
 $this->breadcrumbs=array(
-	'Ex Alumnoses'=>array('index'),
+	'Ex Alumnos'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List ExAlumnos', 'url'=>array('index')),
-	array('label'=>'Manage ExAlumnos', 'url'=>array('admin')),
+	array('label'=>'Lista ExAlumnos', 'url'=>array('index')),
+	array('label'=>'Administrar ExAlumnos', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Create ExAlumnos</h1>
+<br><br>
+<h1>Alta de Ex-Alumno</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -2221,3 +2221,1470 @@ Stack trace:
 REQUEST_URI=/facsa/index.php?r=reports
 HTTP_REFERER=http://localhost/facsa/index.php
 ---
+2015/02/25 07:51:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'facsa.cat_paises' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `cat_paises`.
+in /var/www/facsa/protected/views/exAlumnos/_form.php (151)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/25 07:51:00 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "cat_paises" definida en la clase active record "CatPaises" no se ha podido encontrar en la base de datos.' in /var/www/yii/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(CatPaises))
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /var/www/yii/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 /var/www/facsa/protected/views/exAlumnos/_form.php(151): CActiveRecord->findAll(Object(CDbCriteria))
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#14 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#15 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#24 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#25 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /var/www/facsa/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=site/login
+---
+2015/02/25 07:52:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "ExAlumnos"."pais" no se encuentra definida.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pais')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('pais')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1802): CHtml::resolveValue(Object(ExAlumnos), 'pais')
+#3 /var/www/yii/framework/web/widgets/CActiveForm.php(847): CHtml::activeDropDownList(Object(ExAlumnos), 'pais', Array, Array)
+#4 /var/www/facsa/protected/views/exAlumnos/_form.php(159): CActiveForm->dropDownList(Object(ExAlumnos), 'pais', Array, Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#14 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#15 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#24 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#25 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /var/www/facsa/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=site/login
+---
+2015/02/25 08:36:09 [error] [exception.CException] exception 'CException' with message 'La propiedad "ExAlumnos"."pais" no se encuentra definida.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('pais')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('pais')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1802): CHtml::resolveValue(Object(ExAlumnos), 'pais')
+#3 /var/www/yii/framework/web/widgets/CActiveForm.php(847): CHtml::activeDropDownList(Object(ExAlumnos), 'pais', Array, Array)
+#4 /var/www/facsa/protected/views/exAlumnos/_form.php(159): CActiveForm->dropDownList(Object(ExAlumnos), 'pais', Array, Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#14 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#15 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#24 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#25 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /var/www/facsa/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=site/login
+---
+2015/02/26 07:29:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/delet...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/delete&id=1273
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/view&id=1273
+---
+2015/02/26 07:47:27 [error] [exception.CException] exception 'CException' with message 'El alias "bootstrap.widgets.TbButton" es inválido. Asegúrese de que apunta a un directorio o archivo existente.' in /var/www/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(ExAlumnosController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/facsa/protected/views/exAlumnos/_form.php(25): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#7 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#9 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/facsa/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 07:53:06 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.bootstrap" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(ExAlumnosController), 'application.ext...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 /var/www/facsa/protected/views/exAlumnos/_form.php(25): CBaseController->widget('application.ext...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#7 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#9 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/facsa/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 07:53:23 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.bootstrap" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(ExAlumnosController), 'application.ext...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 /var/www/facsa/protected/views/exAlumnos/_form.php(25): CBaseController->widget('application.ext...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#7 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#9 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/facsa/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 07:53:24 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.bootstrap" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /var/www/yii/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(ExAlumnosController), 'application.ext...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 /var/www/facsa/protected/views/exAlumnos/_form.php(25): CBaseController->widget('application.ext...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#5 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#7 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#9 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/facsa/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:14:15 [error] [php] Missing argument 3 for CActiveForm::radioButtonList(), called in /var/www/facsa/protected/views/exAlumnos/_form.php on line 104 and defined (/var/www/yii/framework/web/widgets/CActiveForm.php:893)
+Stack trace:
+#0 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#1 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#2 /var/www/facsa/protected/views/exAlumnos/create.php(18): ExAlumnosController->renderPartial()
+#3 /var/www/yii/framework/web/CBaseController.php(126): require()
+#4 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#5 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#6 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#7 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): ExAlumnosController->render()
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#11 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#17 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#18 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+in /var/www/facsa/protected/views/exAlumnos/_form.php (104)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/26 09:15:16 [error] [exception.CException] exception 'CException' with message 'La propiedad "ExAlumnos"."Estadocivil" no se encuentra definida.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Estadocivil')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('Estadocivil')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1802): CHtml::resolveValue(Object(ExAlumnos), 'Estadocivil')
+#3 /var/www/yii/framework/web/widgets/CActiveForm.php(847): CHtml::activeDropDownList(Object(ExAlumnos), 'Estadocivil', Array, Array)
+#4 /var/www/facsa/protected/views/exAlumnos/_form.php(510): CActiveForm->dropDownList(Object(ExAlumnos), 'Estadocivil', Array, Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/facsa/protected/views/exAlumnos/create.php(18): CController->renderPartial('_form', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): CController->render('create', Array)
+#14 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#15 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#24 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#25 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#26 /var/www/facsa/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=site/login
+---
+2015/02/26 09:26:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "CombosDependientes/dynamicMunicipios"' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('CombosDependien...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/facsa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/facsa/index.php?r=CombosDependientes/dynamicMunicipios
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:28:38 [error] [exception.CException] exception 'CException' with message 'CActiveForm y sus behaviors no tienen un método o closure llamado "checkList".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/facsa/protected/views/exAlumnos/_form.php(113): CComponent->__call('checkList', Array)
+#1 /var/www/facsa/protected/views/exAlumnos/_form.php(113): CActiveForm->checkList(Object(ExAlumnos), 'vive', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#5 /var/www/facsa/protected/views/exAlumnos/update.php(21): CController->renderPartial('_form', Array)
+#6 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#7 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#10 /var/www/facsa/protected/controllers/ExAlumnosController.php(103): CController->render('update', Array)
+#11 [internal function]: ExAlumnosController->actionUpdate('1275')
+#12 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ExAlumnosController), Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ExAlumnosController), Object(ReflectionMethod), Array)
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/updat...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/facsa/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/update&id=1275
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/view&id=1275
+---
+2015/02/26 09:31:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "CombosDependientes/dynamicMunicipios"' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('CombosDependien...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/facsa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/facsa/index.php?r=CombosDependientes/dynamicMunicipios
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:31:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:32:37 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:33:00 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:33:01 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:33:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:34:25 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:34:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:36:27 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:37:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:38:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/update&id=1275
+---
+2015/02/26 09:38:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:38:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:38:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:40:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:40:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:43:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:43:28 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:45:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:47:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:47:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:47:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:48:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:48:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:48:39 [error] [php] Undefined variable: user (/var/www/facsa/protected/views/exAlumnos/_form.php:313)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#1 /var/www/facsa/protected/views/exAlumnos/create.php(18): ExAlumnosController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#6 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): ExAlumnosController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#16 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+in /var/www/facsa/protected/views/exAlumnos/_form.php (313)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/26 09:48:47 [error] [php] Undefined variable: user (/var/www/facsa/protected/views/exAlumnos/_form.php:313)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#1 /var/www/facsa/protected/views/exAlumnos/create.php(18): ExAlumnosController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#6 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): ExAlumnosController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#16 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+in /var/www/facsa/protected/views/exAlumnos/_form.php (313)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/26 09:48:57 [error] [php] Undefined variable: yii (/var/www/facsa/protected/views/exAlumnos/_form.php:313)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#1 /var/www/facsa/protected/views/exAlumnos/create.php(18): ExAlumnosController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#6 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): ExAlumnosController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#16 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+in /var/www/facsa/protected/views/exAlumnos/_form.php (313)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/26 09:50:36 [error] [php] Undefined variable: auth (/var/www/facsa/protected/views/exAlumnos/_form.php:22)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#1 /var/www/facsa/protected/views/exAlumnos/create.php(18): ExAlumnosController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): ExAlumnosController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#6 /var/www/facsa/protected/controllers/ExAlumnosController.php(79): ExAlumnosController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionCreate()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#16 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+in /var/www/facsa/protected/views/exAlumnos/_form.php (22)
+in /var/www/facsa/protected/views/exAlumnos/create.php (18)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (79)
+2015/02/26 09:50:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:52:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:55:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:56:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/creat...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/create
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:56:12 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:56:22 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:56:45 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(140): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:56:50 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(140): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/create
+---
+2015/02/26 09:58:32 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(140): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/view&id=1101
+---
+2015/02/26 09:58:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/view&id=1101
+---
+2015/02/26 09:59:01 [error] [php] Trying to get property of non-object (/var/www/facsa/protected/views/interfaz/menuPrincipal.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/facsa/protected/views/site/index.php(2): SiteController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/facsa/protected/controllers/SiteController.php(32): SiteController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php
+in /var/www/facsa/protected/views/interfaz/menuPrincipal.php (110)
+in /var/www/facsa/protected/views/site/index.php (2)
+in /var/www/facsa/protected/controllers/SiteController.php (32)
+2015/02/26 09:59:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/view&id=1101
+---
+2015/02/26 09:59:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/facsa/protected/controllers/ExAlumnosController.php:157
+Stack trace:
+#0 /var/www/facsa/protected/controllers/ExAlumnosController.php(55): ExAlumnosController->loadModel('1101')
+#1 [internal function]: ExAlumnosController->actionView('1101')
+#2 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ExAlumnosController), Array)
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ExAlumnosController), Object(ReflectionMethod), Array)
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/view')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/facsa/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/view&id=1101
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:59:05 [error] [php] Trying to get property of non-object (/var/www/facsa/protected/views/interfaz/menuPrincipal.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/facsa/protected/views/site/index.php(2): SiteController->renderPartial()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/facsa/protected/controllers/SiteController.php(32): SiteController->render()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php
+in /var/www/facsa/protected/views/interfaz/menuPrincipal.php (110)
+in /var/www/facsa/protected/views/site/index.php (2)
+in /var/www/facsa/protected/controllers/SiteController.php (32)
+2015/02/26 09:59:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/facsa/protected/controllers/ExAlumnosController.php:157
+Stack trace:
+#0 /var/www/facsa/protected/controllers/ExAlumnosController.php(55): ExAlumnosController->loadModel('1101')
+#1 [internal function]: ExAlumnosController->actionView('1101')
+#2 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ExAlumnosController), Array)
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ExAlumnosController), Object(ReflectionMethod), Array)
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/view')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/facsa/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/view&id=1101
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 09:59:17 [error] [php] Undefined variable: info_usuario (/var/www/facsa/protected/components/UserIdentity.php:43)
+Stack trace:
+#0 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#1 /var/www/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#2 /var/www/facsa/protected/controllers/SiteController.php(96): LoginForm->validate()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=site/login
+in /var/www/facsa/protected/components/UserIdentity.php (43)
+in /var/www/facsa/protected/models/LoginForm.php (52)
+in /var/www/facsa/protected/controllers/SiteController.php (96)
+2015/02/26 09:59:34 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 09:59:46 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 10:01:41 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos/index
+---
+2015/02/26 10:01:51 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 10:02:54 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(101): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 10:03:24 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('matr??cula')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/facsa/protected/views/exAlumnos/admin.php(100): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/facsa/...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/facsa/...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/facsa/...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#9 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): CController->render('admin', Array)
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('exAlumnos/admin')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/facsa/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+HTTP_REFERER=http://localhost/facsa/index.php?r=exAlumnos
+---
+2015/02/26 10:07:26 [error] [php] Undefined variable: dataprovider (/var/www/facsa/protected/views/exAlumnos/admin.php:47)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ExAlumnosController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): ExAlumnosController->renderPartial()
+#2 /var/www/facsa/protected/controllers/ExAlumnosController.php(143): ExAlumnosController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ExAlumnosController->actionAdmin()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): ExAlumnosController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ExAlumnosController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): ExAlumnosController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): ExAlumnosController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/facsa/index.php(13): CWebApplication->run()
+REQUEST_URI=/facsa/index.php?r=exAlumnos/admin
+in /var/www/facsa/protected/views/exAlumnos/admin.php (47)
+in /var/www/facsa/protected/controllers/ExAlumnosController.php (143)
+in /var/www/facsa/index.php (13)

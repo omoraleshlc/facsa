@@ -70,6 +70,7 @@ class ExAlumnos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+                        array('matricula, Nombre_1,Apellido_1, generacion', 'required'),
 			array('matricula, generacion, tipoPostgrado', 'numerical', 'integerOnly'=>true),
 			array('Apellido_1, apellido_2, paisNacimiento, maestria, Email_1, Email_2, Email_3, urlFacebook', 'length', 'max'=>100),
 			array('Nombre_1, Nombre_2, residencia_medica, nombreFacebook, estadoCivil, conyuge', 'length', 'max'=>50),
@@ -81,7 +82,7 @@ class ExAlumnos extends CActiveRecord
 			array('puntos_ceneval', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('keyE, matricula, Apellido_1, apellido_2, Nombre_1, Nombre_2, generacion, vive, fechaNacimiento, ciudadNacimiento, estadoNacimiento, paisNacimiento, promedioCarrera, titulado, fechaTitulacion, year_ceneval, puntos_ceneval, tiene_postgrado, tipoPostgrado, Especialidad_1, Especialidad_2, maestria, residencia_medica, paisActual, estadoActual, ciudadActual, lugar_trabajo_actual, puestoTrabajo, tiene_puesto_destacado, puestoDestacado, Email_1, Email_2, Email_3, tiene_facebook, nombreFacebook, urlFacebook, tiene_twitter, telefonoTrabajo, telefonoCasa, telefonoCelular, direccionActual, lugarResidencia, estadoCivil, conyuge, tiene_conyuge_egresado, hermanosEgresados, hijoEgresado', 'safe', 'on'=>'search'),
+			array(' matricula, Apellido_1, apellido_2, Nombre_1, Nombre_2', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -170,14 +171,14 @@ class ExAlumnos extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('keyE',$this->keyE);
+		
 		$criteria->compare('matricula',$this->matricula);
 		$criteria->compare('Apellido_1',$this->Apellido_1,true);
 		$criteria->compare('apellido_2',$this->apellido_2,true);
 		$criteria->compare('Nombre_1',$this->Nombre_1,true);
 		$criteria->compare('Nombre_2',$this->Nombre_2,true);
 		$criteria->compare('generacion',$this->generacion);
-		$criteria->compare('vive',$this->vive,true);
+		/*$criteria->compare('vive',$this->vive,true);
 		$criteria->compare('fechaNacimiento',$this->fechaNacimiento,true);
 		$criteria->compare('ciudadNacimiento',$this->ciudadNacimiento,true);
 		$criteria->compare('estadoNacimiento',$this->estadoNacimiento,true);
@@ -216,7 +217,7 @@ class ExAlumnos extends CActiveRecord
 		$criteria->compare('conyuge',$this->conyuge,true);
 		$criteria->compare('tiene_conyuge_egresado',$this->tiene_conyuge_egresado,true);
 		$criteria->compare('hermanosEgresados',$this->hermanosEgresados,true);
-		$criteria->compare('hijoEgresado',$this->hijoEgresado,true);
+		$criteria->compare('hijoEgresado',$this->hijoEgresado,true);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

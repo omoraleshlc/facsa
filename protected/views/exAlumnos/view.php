@@ -8,15 +8,17 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ExAlumnos', 'url'=>array('index')),
-	array('label'=>'Create ExAlumnos', 'url'=>array('create')),
-	array('label'=>'Update ExAlumnos', 'url'=>array('update', 'id'=>$model->keyE)),
-	array('label'=>'Delete ExAlumnos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->keyE),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ExAlumnos', 'url'=>array('admin')),
+	array('label'=>'Lista ExAlumnos', 'url'=>array('index')),
+	array('label'=>'Alta de ExAlumnos', 'url'=>array('create')),
+	array('label'=>'Actualizar ExAlumnos', 'url'=>array('update', 'id'=>$model->keyE)),
+	array('label'=>'Eliminar ExAlumnos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->keyE),'confirm'=>'Estás seguro que deseas eliminar éste Ex-Alumno?')),
+	array('label'=>'Administrar ExAlumnos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View ExAlumnos #<?php echo $model->keyE; ?></h1>
+
+
+<h1>Ver ID de Ex-Alumnos #<?php echo $model->keyE; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

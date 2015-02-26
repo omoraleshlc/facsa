@@ -478,7 +478,7 @@ $this->widget('zii.widgets.jui.CJuiDatePicker',array(
          
          
          
-         <br>         
+         <br>
          <h3><div class="success">Comunicación</div></h3>    
             <table class="table table-striped">
                 

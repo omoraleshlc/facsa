@@ -3,13 +3,13 @@
 /* @var $model ExAlumnos */
 
 $this->breadcrumbs=array(
-	'Ex Alumnoses'=>array('index'),
-	'Manage',
+	'Ex Alumnos'=>array('index'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List ExAlumnos', 'url'=>array('index')),
-	array('label'=>'Create ExAlumnos', 'url'=>array('create')),
+	array('label'=>'Lista ExAlumnos', 'url'=>array('index')),
+	array('label'=>'Alta de ExAlumnos', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,14 +26,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Ex Alumnoses</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<div class="container">
+<h1>Búsquedas de Ex-Alumnos</h1>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+
+
+<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -45,57 +44,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'keyE',
-		'matrícula',
+		
+		'matricula',
 		'Apellido_1',
 		'apellido_2',
 		'Nombre_1',
-		'Nombre_2',
-		/*
+		'Nombre_2',		
 		'generacion',
-		'vive',
-		'fechaNacimiento',
-		'ciudadNacimiento',
-		'estadoNacimiento',
-		'paisNacimiento',
-		'promedioCarrera',
-		'titulado',
-		'fechaTitulacion',
-		'year_ceneval',
-		'puntos_ceneval',
-		'tiene_postgrado',
-		'tipoPostgrado',
-		'Especialidad_1',
-		'Especialidad_2',
-		'maestria',
-		'residencia_medica',
-		'paisActual',
-		'estadoActual',
-		'ciudadActual',
-		'lugar_trabajo_actual',
-		'puestoTrabajo',
-		'tiene_puesto_destacado',
-		'puestoDestacado',
-		'Email_1',
-		'Email_2',
-		'Email_3',
-		'tiene_facebook',
-		'nombreFacebook',
-		'urlFacebook',
-		'tiene_twitter',
-		'telefonoTrabajo',
-		'telefonoCasa',
-		'telefonoCelular',
-		'direccionActual',
-		'lugarResidencia',
-		'estadoCivil',
-		'conyuge',
-		'tiene_conyuge_egresado',
-		'hermanosEgresados',
-		'hijoEgresado',
-		*/
+			
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+</div>

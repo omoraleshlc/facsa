@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Ex Alumnoses',
+	'Ex Alumnos',
 );
 
 $this->menu=array(
-	array('label'=>'Create ExAlumnos', 'url'=>array('create')),
-	array('label'=>'Manage ExAlumnos', 'url'=>array('admin')),
+	array('label'=>'Alta de ExAlumnos', 'url'=>array('create')),
+	array('label'=>'Administrar ExAlumnos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Ex Alumnoses</h1>
+<h1>Lista de Ex- Alumnos</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -61,9 +61,9 @@
                                    <link rel="shortcut icon" href="./images/7day.jpeg"></link>
   
       <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="assets/css/docs.css" rel="stylesheet"></link>
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./assets/css/docs.css" rel="stylesheet"></link>
     
 </head>
 
